@@ -1,0 +1,130 @@
+:root {
+  --gul: #ffd140;
+  --bläck: #1c1430;
+  --papper: #f5f3fa;
+  --kort: #ffffff;
+  --röd: #f25c54;
+  --grön: #4fc06c;
+  --blå: #4a7df2;
+  --lila: #9b63e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: ui-rounded, "SF Pro Rounded", "Nunito", "Arial Rounded MT Bold", system-ui, sans-serif;
+  background: var(--papper);
+  color: var(--bläck);
+  line-height: 1.6;
+}
+
+header.hero {
+  background: var(--gul);
+  border-bottom: 4px solid var(--bläck);
+  text-align: center;
+  padding: 48px 20px 40px;
+}
+
+header.hero h1 {
+  font-size: clamp(2.2rem, 7vw, 3.6rem);
+  font-weight: 900;
+  margin: 16px 0 4px;
+  letter-spacing: 1px;
+}
+
+header.hero p.slogan {
+  font-size: clamp(1.1rem, 3.5vw, 1.5rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.blobbar { display: flex; justify-content: center; gap: 6px; flex-wrap: wrap; }
+.blobbar svg { width: clamp(44px, 10vw, 72px); height: auto; }
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 14px;
+  background: var(--kort);
+  border-bottom: 1px solid #e3dff0;
+}
+
+nav a {
+  color: var(--bläck);
+  text-decoration: none;
+  font-weight: 800;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: var(--papper);
+}
+
+nav a:hover, nav a.aktiv { background: var(--gul); }
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 28px 20px 60px;
+}
+
+.kort {
+  background: var(--kort);
+  border-radius: 20px;
+  padding: 22px 24px;
+  margin: 18px 0;
+  box-shadow: 0 2px 10px rgba(28, 20, 48, 0.07);
+}
+
+h2 { font-size: 1.4rem; font-weight: 900; margin: 28px 0 8px; }
+.kort h2:first-child, .kort h3:first-child { margin-top: 0; }
+h3 { font-weight: 800; margin: 18px 0 6px; }
+
+ul, ol { padding-left: 22px; }
+li { margin: 6px 0; }
+
+.steg { list-style: none; padding: 0; counter-reset: steg; }
+.steg li {
+  counter-increment: steg;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin: 12px 0;
+}
+.steg li::before {
+  content: counter(steg);
+  flex: 0 0 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--lila);
+  color: #fff;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.märke {
+  display: inline-block;
+  background: var(--bläck);
+  color: var(--gul);
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-top: 10px;
+}
+
+a { color: var(--blå); font-weight: 700; }
+
+footer {
+  text-align: center;
+  padding: 26px 20px 40px;
+  color: #6f6a80;
+  font-size: 0.9rem;
+}
+
+footer a { color: inherit; }
+
+hr.policy { border: none; border-top: 2px dashed #d9d3ea; margin: 36px 0; }
+.datum { color: #6f6a80; font-size: 0.95rem; }
